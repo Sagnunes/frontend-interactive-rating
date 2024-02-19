@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link href="./output.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            color: white;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: orange;
+        }
+
+        .bg-radial-gradient {
+            background: linear-gradient(to left top, hsl(215, 20%, 17%), hsl(215, 24%, 12%))
+        }
+    </style>
+</head>
+<body class="bg-blue-veryDark">
+
+<main class="flex h-screen justify-center items-center mx-6">
+    <section class="flex flex-col w-[412px] h-[416px] mx-auto rounded-2xl p-6 bg-radial-gradient">
+        <!-- Rating state start -->
+
+        <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center mt-6 ">
+            <img src="../images/icon-star.svg" alt="icon star" class="w-3 h-3">
+        </div>
+        <h3 class="font-overpass text-white font-bold text-2xl my-5">
+            How did we do?
+        </h3>
+
+        <p class="font-overpass font-normal text-sm text-grey-light mb-8"> Please let us know how we did with your
+            support request. All feedback is appreciated to help us improve our
+            offering!</p>
+
+
+        <div class="flex flex-row justify-between font-overpass font-bold text-sm text-grey-medium">
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">1</div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">2</div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">3</div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">4</div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">5</div>
+        </div>
+
+        <div class="w-full flex justify-center">
+            <a href="thankyou.html"
+               class="text-center bg-orange text-white mt-10 py-4 rounded-3xl text-sm font-bold font-overpass tracking-widest w-[279px] hover:bg-white hover:text-orange">
+                SUBMIT
+            </a>
+        </div>
+
+        <!-- Rating state end -->
+    </section>
+
+</main>
+
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/Sagnunes">Sérgio Nunes</a>.
+</div>
+</body>
+</html>

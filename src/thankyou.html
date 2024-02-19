@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link href="./output.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            color: white;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .attribution a {
+            color: orange;
+        }
+
+        .bg-radial-gradient {
+            background: linear-gradient(to left top, hsl(215, 20%, 17%), hsl(215, 24%, 12%))
+        }
+    </style>
+</head>
+<body class="bg-blue-veryDark">
+<main class="flex h-screen justify-center items-center mx-6">
+    <section class="flex flex-col w-[412px] h-[416px] mx-auto rounded-2xl p-6 bg-radial-gradient items-center">
+        <img src="../images/illustration-thank-you.svg" alt="thank you icon" class="w-[144px] h-[96px] mt-9">
+        <div class="bg-blue-dark mt-6 rounded-3xl text-sm font-overpass font-normal w-[168px] h-[32px] flex items-center justify-center">
+            <p class="text-orange">You selected 4 out of 5</p>
+        </div>
+        <h3 class="font-overpass text-white font-bold text-2xl my-5">
+            Thank you!
+        </h3>
+        <p class="font-overpass font-normal text-sm text-grey-light mb-8 px-8 text-center">
+            We appreciate you taking the time to give a rating. If you ever need more support,
+            don’t hesitate to get in touch!
+        </p>
+        <div class="flex w-full justify-end">
+            <a href="index.html" class="text-xs text-orange hover:underline">Back</a>
+        </div>
+    </section>
+</main>
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://www.frontendmentor.io/profile/Sagnunes">Sérgio Nunes</a>.
+</div>
+</body>
+</html>
