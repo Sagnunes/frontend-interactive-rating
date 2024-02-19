@@ -52,7 +52,7 @@
 <script>
     // vanilla js version of $(document).ready(function(){/*code here*/});
     window.onload = function() {
-        let selectedScore = localStorage.getItem('score')
+        let selectedScore = localStorage.getItem('score') || 0
 
         let message = document.getElementById('scoreMessage');
         message.innerHTML = `You selected ${selectedScore} out of 5`
