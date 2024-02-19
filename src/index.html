@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- displays site properly based on user's device -->
     <link href="./output.css" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-
     <title>Frontend Mentor | Interactive rating component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -26,9 +26,10 @@
         }
     </style>
 </head>
+
 <body class="bg-blue-veryDark">
 
-<main class="flex h-screen justify-center items-center mx-6">
+<main class="flex h-screen justify-center items-center mx-6" id="app">
     <section class="flex flex-col w-[412px] h-[416px] mx-auto rounded-2xl p-6 bg-radial-gradient">
         <!-- Rating state start -->
 
@@ -38,18 +39,27 @@
         <h3 class="font-overpass text-white font-bold text-2xl my-5">
             How did we do?
         </h3>
-
         <p class="font-overpass font-normal text-sm text-grey-light mb-8"> Please let us know how we did with your
             support request. All feedback is appreciated to help us improve our
             offering!</p>
 
 
         <div class="flex flex-row justify-between font-overpass font-bold text-sm text-grey-medium">
-            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">1</div>
-            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">2</div>
-            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">3</div>
-            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">4</div>
-            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer">5</div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer" @click="handleOfClick(1)" id="score-1">
+                1
+            </div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer" @click="handleOfClick(2)" id="score-2">
+                2
+            </div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer" @click="handleOfClick(3)" id="score-3">
+                3
+            </div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer" @click="handleOfClick(4)" id="score-4">
+                4
+            </div>
+            <div class="bg-blue-dark rounded-full w-10 h-10 flex justify-center items-center hover:bg-grey-light hover:text-white cursor-pointer" @click="handleOfClick(5)" id="score-5">
+                5
+            </div>
         </div>
 
         <div class="w-full flex justify-center">
@@ -63,10 +73,37 @@
     </section>
 
 </main>
-
 <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://www.frontendmentor.io/profile/Sagnunes">Sérgio Nunes</a>.
 </div>
+<script>
+    const {createApp} = Vue
+
+    createApp({
+        data() {
+            return {
+                message: '',
+
+            }
+        },
+        methods: {
+            handleOfClick(score) {
+
+                for (let i = 1; i <= 5; i++) {
+                    let el = document.getElementById(`score-${i}`)
+                    el.style.backgroundColor = "hsl(213, 19%, 18%)";
+                    el.style.color = "hsl(216, 12%, 54%)";
+                }
+                let el = document.getElementById(`score-${score}`)
+
+                el.style.backgroundColor = "hsl(25, 97%, 53%)";
+                el.style.color = "hsl(0, 0%, 100%)";
+
+                localStorage.setItem('score', score)
+            }
+        }
+    }).mount('#app')
+</script>
 </body>
 </html>

@@ -31,7 +31,7 @@
     <section class="flex flex-col w-[412px] h-[416px] mx-auto rounded-2xl p-6 bg-radial-gradient items-center">
         <img src="../images/illustration-thank-you.svg" alt="thank you icon" class="w-[144px] h-[96px] mt-9">
         <div class="bg-blue-dark mt-6 rounded-3xl text-sm font-overpass font-normal w-[168px] h-[32px] flex items-center justify-center">
-            <p class="text-orange">You selected 4 out of 5</p>
+            <p class="text-orange" id="scoreMessage">You selected 4 out of 5</p>
         </div>
         <h3 class="font-overpass text-white font-bold text-2xl my-5">
             Thank you!
@@ -49,5 +49,14 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="https://www.frontendmentor.io/profile/Sagnunes">Sérgio Nunes</a>.
 </div>
+<script>
+    // vanilla js version of $(document).ready(function(){/*code here*/});
+    window.onload = function() {
+        let selectedScore = localStorage.getItem('score')
+
+        let message = document.getElementById('scoreMessage');
+        message.innerHTML = `You selected ${selectedScore} out of 5`
+    };
+</script>
 </body>
 </html>
